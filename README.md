@@ -1,2 +1,2 @@
 # lib_for_pwn
-some tools used for CTF
+some tools used for CTF pwnable challenges

